@@ -1,0 +1,24 @@
+# Hidden files/directories (except .jira-root and .gitignore)
+.*
+!.jira-root
+!.gitignore
+
+# Logs
+**/logs/
+*.log
+
+# Editor/IDE
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.orig
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime
+__pycache__/
+*.pyc
