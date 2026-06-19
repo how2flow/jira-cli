@@ -2,8 +2,4 @@
 set -e
 source "$(cd "$(dirname "$0")"; while [ ! -f .jira-root ]; do cd ..; done; pwd)/scripts/params.sh"
 
-if [ "$1" = "--remove" ]; then
-    teardown_environment
-else
-    setup_environment
-fi
+run_skill "jira-update"

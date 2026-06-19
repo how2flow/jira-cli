@@ -1,7 +1,8 @@
-# Hidden files/directories (except .jira-root and .gitignore)
+# Hidden files/directories (except .jira-root, .gitignore, .env.example)
 .*
 !.jira-root
 !.gitignore
+!.env.example
 
 # Logs
 **/logs/

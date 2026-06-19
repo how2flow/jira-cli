@@ -11,6 +11,16 @@ JIRA_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")"; while [ ! -f .jira-root ]; do 
 JIRA_SCRIPTS_DIR="$JIRA_ROOT/scripts"
 JIRA_SKILLS_DIR="$JIRA_ROOT/skills"
 
+# Load .env if exists (for cron environment)
+if [ -f "$JIRA_ROOT/.env" ]; then
+    set -a
+    source "$JIRA_ROOT/.env"
+    set +a
+fi
+
+# Ensure common paths (cron has minimal PATH)
+export PATH="$HOME/.local/bin:$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node/ 2>/dev/null | tail -1)/bin:$PATH:/usr/local/bin" 2>/dev/null
+
 # Load functions
 source "$JIRA_SCRIPTS_DIR/functions.sh"
 
